@@ -1,28 +1,31 @@
-let marcas = [];//['Fiat', 'BMW', 'Audi'];
+let marcas = [];
 let modelos = [];
+let veiculos = [];
 
-function cadastrarMarca(marca) {
-	if (marca === '') return;
-	if (marcas.some(m => m === marca)) return;
-	marcas.push(marca);	
-	console.log('Marca cadastrada com sucesso!');
-}
+// function cadastrarMarca(marca) {
+// 	if (marca === '') return;
+// 	if (marcas.some(m => m === marca)) return;
+// 	marcas.push(marca);	
+// 	console.log('Marca cadastrada com sucesso!');
+// }
 
-function cadastrarModelo(marca, modelo) {
+function cadastrarModelo(modelo, marca) {
 	if (marca === '' || modelo === '') return;
-	cadastrarMarca(marca);
-	if (modelos.some(m => m === modelo)) return;
-	modelos.push(modelo);	
+	let obj = {
+		nome: modelo,
+		marca
+	}
+	modelos.push(obj);
 	console.log('Modelo cadastrado com sucesso!');
 }
 
 // cadastrarMarca('Fiat');
 // cadastrarMarca('BMW');
 // cadastrarMarca('Audi');
-cadastrarModelo('Fiat', 'Uno');
-cadastrarModelo('Fiat', 'CRONOS');
-cadastrarModelo('BMW', 'X5');
-cadastrarModelo('BMW', 'M5');
+cadastrarModelo('Uno', 'Fiat');
+cadastrarModelo('CRONOS', 'Fiat');
+cadastrarModelo('X5', 'BMW');
+cadastrarModelo('M5', 'BMW');
 
-console.log(marcas);
+// console.log(marcas);
 console.log(modelos);
