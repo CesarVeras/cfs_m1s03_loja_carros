@@ -19,5 +19,77 @@
 	<header>
 		<h2>Veículo</h2>
 	</header>
+	<main>
+		<form>
+			<label for="selectModelo">Modelo</label>
+			<select name="modelo" id="selectModelo">
+				<option value="-1">Selecione</option>
+			</select><br>
+			<label for="inputImagem">Imagem</label>
+			<input type="file" name="imagem" id="inputImagem"><br>
+			<label for="inputCor">Cor</label>
+			<input type="color" name="cor" id="inputCor"><br>
+			<label for="inputKm">Quilometragem</label>
+			<input type="number" name="km" id="inputKm"><br>
+			<label for="inputValor">Valor</label>
+			<input type="number" name="valor" id="inputValor"><br>
+			<button type="button" id="btnCadastrarVeiculo">Cadastrar</button>
+		</form>
+		<p id="feedback"></p>
+	</main>
+	<script>
+		const selectModelo = document.querySelector('#selectModelo');
+		const inputImagem = document.querySelector('#inputImagem');
+		const inputCor = document.querySelector('#inputCor');
+		const inputKm = document.querySelector('#inputKm');
+		const inputValor = document.querySelector('#inputValor');
+
+		const btnCadastrarVeiculo = document.querySelector('#btnCadastrarVeiculo');
+		const pFeedback = document.querySelector('#feedback');
+
+		modelos.map((modelo, i) => {
+			let option = document.createElement('option');
+			option.value = i;
+			option.textContent = modelo.nome;
+			selectModelo.appendChild(option);
+		});
+
+		btnCadastrarVeiculo.addEventListener('click', () => {
+			if (!selectModelo.value < 0) {
+				pFeedback.textContent = 'Preencha o campo modelo para cadastrar.';
+				return;
+			}
+			
+			if (!inputImagem) {
+				pFeedback.textContent = 'Escolha uma imagem para cadastrar.';
+				return;
+			}
+			
+			if (!inputCor) {
+				pFeedback.textContent = 'Escolha uma cor para cadastrar.';
+				return;
+			}
+			
+			if (!inputKm) {
+				pFeedback.textContent = 'Escolha uma quilometragem para cadastrar.';
+				return;
+			}
+			
+			if (!inputValor) {
+				pFeedback.textContent = 'Escolha uma valor para cadastrar.';
+				return;
+			}
+
+			let modelo = modelos[selectModelo.value].nome;
+			let marca = modelos[selectModelo.value].marca;
+			let km = inputKm.value;
+			let valor = inputValor.value;
+			let cor = inputCor.value;
+
+			let feedback = cadastrarVeiculo(modelo, marca, `${marca} ${modelo}`, km, valor, cor);
+			console.log(listarVeiculos());
+			pFeedback.textContent = feedback;
+		});
+	</script>
 </body>
 </html>
