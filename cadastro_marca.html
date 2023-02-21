@@ -38,6 +38,8 @@
 				return;
 			}
 			let feedback = cadastrarMarca(inputMarca.value);
+			
+			inputMarca.value = '';
 			pFeedback.textContent = feedback;
 		});
 	</script>

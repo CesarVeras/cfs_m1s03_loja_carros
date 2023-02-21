@@ -19,5 +19,47 @@
 	<header>
 		<h2>Início</h2>
 	</header>
+	<main>
+		<section id="grid-veiculos">
+
+		</section>		
+	</main>
+	<script>
+		const gridVeiculos = document.querySelector('#grid-veiculos');
+
+		listarVeiculos().map((veiculo) => {
+			let { img, modelo, marca, km, valor, cor } = veiculo;
+			let article = document.createElement('article');
+
+			let eImg = document.createElement('img');
+			eImg.src = img;
+
+			let pModelo = document.createElement('p');
+			pModelo.textContent = `Modelo: ${modelo}`;
+
+			let pMarca = document.createElement('p');
+			pMarca.textContent = `Marca: ${marca}`;
+
+			let pKm = document.createElement('p');
+			pKm.textContent = `Quilometragem: ${km}`;
+
+			let pValor = document.createElement('p');
+			pValor.textContent = `Valor: ${valor}`;
+
+			let div = document.createElement('div');
+			div.style.backgroundColor = cor;
+			div.style.aspectRatio = '1/1';
+			div.style.width = '45px';
+
+			article.appendChild(eImg);
+			article.appendChild(pModelo);
+			article.appendChild(pMarca);
+			article.appendChild(pKm);
+			article.appendChild(pValor);
+			article.appendChild(div);
+
+			gridVeiculos.appendChild(article);
+		});
+	</script>
 </body>
 </html>
