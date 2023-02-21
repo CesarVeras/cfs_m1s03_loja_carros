@@ -1,4 +1,5 @@
 let marcas = [];//['Fiat', 'BMW', 'Audi'];
+let modelos = [];
 
 function cadastrarMarca(marca) {
 	if (marca === '') return;
@@ -7,8 +8,21 @@ function cadastrarMarca(marca) {
 	console.log('Marca cadastrada com sucesso!');
 }
 
-cadastrarMarca('Fiat');
-cadastrarMarca('BMW');
-cadastrarMarca('Audi');
+function cadastrarModelo(marca, modelo) {
+	if (marca === '' || modelo === '') return;
+	cadastrarMarca(marca);
+	if (modelos.some(m => m === modelo)) return;
+	modelos.push(modelo);	
+	console.log('Modelo cadastrado com sucesso!');
+}
+
+// cadastrarMarca('Fiat');
+// cadastrarMarca('BMW');
+// cadastrarMarca('Audi');
+cadastrarModelo('Fiat', 'Uno');
+cadastrarModelo('Fiat', 'CRONOS');
+cadastrarModelo('BMW', 'X5');
+cadastrarModelo('BMW', 'M5');
 
 console.log(marcas);
+console.log(modelos);
