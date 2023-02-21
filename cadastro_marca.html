@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Loja de Veículos</title>
+	<script src="index.js"></script>
 </head>
 <body>
 	<nav>
@@ -16,7 +17,21 @@
 		</ul>
 	</nav>
 	<header>
-		<h2>Marca</h2>
+		<h2>Cadastro de Marca</h2>
 	</header>
+	<main>
+		<form>
+			<label for="marca">Nome da Marca</label>
+			<input type="text" id="marca" name="marca" placeholder="marca...">
+			<button type="button" id="btnCadastrarMarca">Cadastrar</button>
+		</form>
+	</main>
+	<script>
+		const inputMarca = document.querySelector('#marca');
+		const btnCadastrarMarca = document.querySelector('#btnCadastrarMarca');
+		btnCadastrarMarca.addEventListener('click', () => {
+			cadastrarMarca(inputMarca.value);
+		});
+	</script>
 </body>
 </html>

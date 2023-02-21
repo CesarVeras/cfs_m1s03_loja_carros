@@ -37,9 +37,9 @@ function listarVeiculos() {
 // cadastrarModelo('CRONOS', 'Fiat');
 // cadastrarModelo('X5', 'BMW');
 // cadastrarModelo('M5', 'BMW');
-cadastrarVeiculo('Uno', 'Fiat', 'Fiat Uno Vermelho', 0, 46840.00, 'Vermelho');
-cadastrarVeiculo('CRONOS', 'Fiat', 'Fiat CRONOS Branco', 0, 93843.00, 'Branco');
+// cadastrarVeiculo('Uno', 'Fiat', 'Fiat Uno Vermelho', 0, 46840.00, 'Vermelho');
+// cadastrarVeiculo('CRONOS', 'Fiat', 'Fiat CRONOS Branco', 0, 93843.00, 'Branco');
 
 // console.log(marcas);
 // console.log(modelos);
-console.log(listarVeiculos());
+// console.log(listarVeiculos());
