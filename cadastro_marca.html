@@ -25,12 +25,20 @@
 			<input type="text" id="marca" name="marca" placeholder="marca...">
 			<button type="button" id="btnCadastrarMarca">Cadastrar</button>
 		</form>
+		<p id="feedback"></p>
 	</main>
 	<script>
 		const inputMarca = document.querySelector('#marca');
 		const btnCadastrarMarca = document.querySelector('#btnCadastrarMarca');
+		const pFeedback = document.querySelector('#feedback');
+
 		btnCadastrarMarca.addEventListener('click', () => {
-			cadastrarMarca(inputMarca.value);
+			if (!inputMarca.value) {
+				pFeedback.textContent = 'Preencha o campo marca para cadastrar.'
+				return;
+			}
+			let feedback = cadastrarMarca(inputMarca.value);
+			pFeedback.textContent = feedback;
 		});
 	</script>
 </body>

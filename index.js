@@ -1,4 +1,4 @@
-let marcas = [];
+let marcas = ['Fiat', 'BMW', 'Audi'];
 let modelos = [];
 let veiculos = [];
 
@@ -6,7 +6,7 @@ function cadastrarMarca(marca) {
 	if (marca === '') return;
 	if (marcas.some(m => m === marca)) return;
 	marcas.push(marca);	
-	console.log('Marca cadastrada com sucesso!');
+	return 'Marca cadastrada com sucesso!';
 }
 
 function cadastrarModelo(modelo, marca) {
@@ -16,14 +16,14 @@ function cadastrarModelo(modelo, marca) {
 		marca
 	}
 	modelos.push(obj);
-	console.log('Modelo cadastrado com sucesso!');
+	return 'Modelo cadastrado com sucesso!';
 }
 
 function cadastrarVeiculo(modelo, marca, nome, km, valor, cor) {
 	let obj = { nome, marca, modelo, cor, km, valor	}
 	if (veiculos.some(v => v.nome === obj.nome)) return;
 	veiculos.push(obj);
-	console.log('Veículo cadastrado com sucesso!');
+	return 'Veículo cadastrado com sucesso!';
 }
 
 function listarVeiculos() {

@@ -19,5 +19,45 @@
 	<header>
 		<h2>Modelo</h2>
 	</header>
+	<main>
+		<form>
+			<label for="modelo">Nome do Modelo</label>
+			<input type="text" id="modelo" name="modelo" placeholder="modelo..."><br>
+			<label for="marca">Marca</label>
+			<select name="marca" id="selectMarca">
+				<option value="-1">Selecione</option>
+			</select>
+			<button type="button" id="btnCadastrarModelo">Cadastrar</button>
+		</form>
+		<p id="feedback"></p>
+	</main>
+	<script>
+		const inputModelo = document.querySelector('#modelo');
+		const selectMarca = document.querySelector('#selectMarca');
+		const btnCadastrarModelo = document.querySelector('#btnCadastrarModelo');
+		const pFeedback = document.querySelector('#feedback');
+
+		marcas.map((marca, i) => {
+			let option = document.createElement('option');
+			option.value = i;
+			option.textContent = marca;
+			selectMarca.appendChild(option);
+		});
+
+		btnCadastrarModelo.addEventListener('click', () => {
+			if (!inputModelo.value) {
+				pFeedback.textContent = 'Preencha o campo modelo para cadastrar.';
+				return;
+			}
+			
+			if (selectMarca.value < 0) {
+				pFeedback.textContent = 'Escolha uma marca para cadastrar.';
+				return;
+			}
+
+			let feedback = cadastrarModelo(inputModelo.value, marcas[selectMarca.value]);
+			pFeedback.textContent = feedback;
+		});
+	</script>
 </body>
 </html>
