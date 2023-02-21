@@ -36,17 +36,3 @@ function cadastrarVeiculo(modelo, marca, nome, km, valor, cor, img) {
 function listarVeiculos() {
 	return veiculos;
 }
-
-// cadastrarMarca('Fiat');
-// cadastrarMarca('BMW');
-// cadastrarMarca('Audi');
-// cadastrarModelo('Uno', 'Fiat');
-// cadastrarModelo('CRONOS', 'Fiat');
-// cadastrarModelo('X5', 'BMW');
-// cadastrarModelo('M5', 'BMW');
-// cadastrarVeiculo('Uno', 'Fiat', 'Fiat Uno Vermelho', 0, 46840.00, 'Vermelho');
-// cadastrarVeiculo('CRONOS', 'Fiat', 'Fiat CRONOS Branco', 0, 93843.00, 'Branco');
-
-// console.log(marcas);
-// console.log(modelos);
-// console.log(listarVeiculos());
